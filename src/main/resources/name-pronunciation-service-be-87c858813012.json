@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "name-pronunciation-service-be",
+  "private_key_id": "87c8588130127b3df5c45b4f6bbdee30f24cf904",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDIoI4DAAyQkhCV\nm970mCSPwXs35SuCRhBbC5VuGVe3hmmQnU+UIC7sKyGyQCsGKHVOF6dmK4DtaSzf\neslOiTC+tz/KxfWG1wtZR90EwcGfO47Kuyn03Vz7WiLiKv/3iyGUkgyMLbwthgvB\npvY6FkzRQ76bwgrSu0GqMJXSf2r5CzyWVdcm0j+LsGkgwFaJJiS+RkSaEm4LPw+H\nCXiBGsqu5Z83yhOU3eXFC4IwEvckaLWvtGPfiNXfWu4O7JgFLYNS8iLzGJp1H1Jr\nlD0e31xCsXFMQGXAu27MXLlSCY7uYfczM4V3t+GqVc46rSqIPa3N3OXjR/SSrSdx\nE62706rXAgMBAAECggEAA0NH2/j3EK4sx99vlPxucnS763D2MARcsBEJqUSPPnmt\n+NSeHojBdUTO+PuogiKhTxenuMvR/nUcmOEsf0hQOyHMJKDrOSSr12le86daXfEV\nhZWH/VFQ+aOBzWTT9zN+OdDVlGgKrJYxVcEV4GRMHoZ4BfIgw+7uBqBgp2Tmw/hp\nRQSZePhLb++eWVGpj+Jo+umWqFuE+U0Zq2O96lhS8Mu1VHarQpiB1rU6Rp88AGyY\nVptLSDf+78cAIzC+WS+xkev3WfSjLe+82zqaM2Pi6BAonRFztYTp9kTGN7O/gg6u\nULrYNQXCojqu4nvVAxPqgvrR+AyfvACb60BNeWqLlQKBgQDq8DMWdjT0INhittmQ\nDB3og2XnAGJoIS0WHe4f8k2jnHU+Ho8V0Ssuztp6OWLcr6p3eoVRHK5nxmeh03c3\ngK4mZAFifb48G/+hWRP6TcLCX9tdajQCFobHvUjM4AtV0wSblXzb2pGHJfF8rUXm\nUZrKzy7EiwGTffWuTdLGObLwCwKBgQDanOuDBmrWY/wvVzRDseuQvRTo7BHHqzQM\nRIoeiBlDdyl0JvYfr/qBqx3wqVhTOOnGJUJ5o3EmiTaSHvwc6+2grbiFthYVMXkC\n3Tq0G23LGL4i9dkfayB7OIiT+1k+ZdFHa/TOZP5npmHjqp06yaX81wyyShTfWWhu\nKaU1ZYpz5QKBgF9I1C+D+a4ZtCk1J7/4ahjnUekCiubYrcSOlwl16G83AYYUNswO\nbYkqdAmmRKZkyKp0kqV3EHUeTuGfNnbYRclkPfuILCOM53y0+BlIeHkFD58vd7Bx\nGnDgICqXo4FHeFLxqhYw61z40pxSWkszRaiDpuAn0JfVOlNbVOT4ec5JAoGBAKlB\n92IhtNQ644TvuopzFZShoK/aHsX9+rVI17td2lmOyCyjAcp04LpGd07efoEovm7o\naDhvX+rbL8IgdUgbLodKGWSFH0HXZP7ftFTAK9ikVooQ2MNnmOVuVuhkIaua/1aR\n8h9euE4d1wqDDWr3tyk0gyMDEnf+7Ejmu3/FF1Y1AoGBAOILusrM4snCQ0B2GYBi\njFq47UI8TEuLtkBudihPHglRdnhvitetpGWEWxWuaKTzDVyKWeC75JWj6bx+YMsD\nZ0jQBPwFUy6ho7x/NmE1W0aF6i31SGGL6TwTPjQt9DXXJbTyfcwPPobGkoXMNfeL\nhlRjYV9F8+TMEnHRdQ2QvsUz\n-----END PRIVATE KEY-----\n",
+  "client_email": "hack-jack@name-pronunciation-service-be.iam.gserviceaccount.com",
+  "client_id": "111288241145223924688",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/hack-jack%40name-pronunciation-service-be.iam.gserviceaccount.com"
+}

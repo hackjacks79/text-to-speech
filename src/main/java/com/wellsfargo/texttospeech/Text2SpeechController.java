@@ -37,11 +37,7 @@ public class Text2SpeechController {
 
 	  public Text2SpeechController(AppConfig appConfig) {
 	    try {
-	      ServiceAccountCredentials credentials = ServiceAccountCredentials
-	          .fromStream(Files.newInputStream(Paths.get(appConfig.getCredentialsPath())));
-	      TextToSpeechSettings settings = TextToSpeechSettings.newBuilder()
-	          .setCredentialsProvider(FixedCredentialsProvider.create(credentials)).build();
-	      this.textToSpeechClient = TextToSpeechClient.create(settings);
+	   	      this.textToSpeechClient = TextToSpeechClient.create();
 	    }
 	    catch (IOException e) {
 	      LoggerFactory.getLogger(Text2SpeechController.class)
