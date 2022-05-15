@@ -8,12 +8,13 @@ import java.util.stream.Collectors;
 
 import javax.annotation.PreDestroy;
 
+import com.google.common.io.ByteSource;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -28,6 +29,7 @@ import com.google.cloud.texttospeech.v1.TextToSpeechSettings;
 import com.google.cloud.texttospeech.v1.Voice;
 import com.google.cloud.texttospeech.v1.VoiceSelectionParams;
 import com.google.protobuf.ByteString;
+import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
 
 @RestController
 @CrossOrigin
@@ -63,10 +65,10 @@ public class Text2SpeechController {
 	  }
 
 	  @PostMapping("speak")
-	  public byte[] speak(@RequestParam("language") String language,
-	      @RequestParam("voice") String voice, @RequestParam("text") String text,
-	      @RequestParam("pitch") double pitch,
-	      @RequestParam("speakingRate") double speakingRate) {
+	  public ResponseEntity<InputStreamResource> speak(@RequestParam("language") String language,
+														 @RequestParam("voice") String voice, @RequestParam("text") String text,
+														 @RequestParam("pitch") double pitch,
+														 @RequestParam("speakingRate") double speakingRate) throws IOException {
 
 	    SynthesisInput input = SynthesisInput.newBuilder().setText(text).build();
 
@@ -79,7 +81,12 @@ public class Text2SpeechController {
 	    SynthesizeSpeechResponse response = this.textToSpeechClient.synthesizeSpeech(input,
 	        voiceSelection, audioConfig);
 
-	    return response.getAudioContent().toByteArray();
+		  InputStreamResource resource =  new InputStreamResource(ByteSource.wrap(response.getAudioContent().toByteArray()).openStream());
+		  return ResponseEntity.ok()
+				  .contentType(MediaType.parseMediaType("application/octet-stream"))
+				  .contentLength(response.getAudioContent().toByteArray().length)
+				  .body(resource);
+
 	  }
 
 	  private static String getSupportedLanguage(Voice voice) {
@@ -89,6 +96,10 @@ public class Text2SpeechController {
 	    }
 	    return null;
 	  }
-	  
+
+	@RequestMapping("/_ah/health")
+	public ResponseEntity<String> healthCheck() {
+		return new ResponseEntity<>("Healthy", HttpStatus.OK);
+	}
 	  
 }
