@@ -1,6 +1,4 @@
 runtime: java11
-instance_class: B1
+instance_class: B2
 manual_scaling:
   instances: 2
-health_check:
-  enable_health_check: False
