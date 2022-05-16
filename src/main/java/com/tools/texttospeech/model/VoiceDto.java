@@ -1,4 +1,4 @@
-package com.wellsfargo.texttospeech;
+package com.tools.texttospeech.model;
 
 public class VoiceDto {
 	 private final String name;

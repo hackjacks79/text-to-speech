@@ -1,4 +1,4 @@
-package com.wellsfargo.texttospeech;
+package com.tools.texttospeech;
 
 import java.io.IOException;
 
@@ -17,8 +17,7 @@ public class TextToSpeechApplication {
 		try {
 			textToSpeechClient =  TextToSpeechClient.create();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+ 			e.printStackTrace();
 		}
 		return textToSpeechClient;
 	}
