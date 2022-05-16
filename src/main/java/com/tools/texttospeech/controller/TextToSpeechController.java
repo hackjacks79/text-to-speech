@@ -19,16 +19,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.cloud.texttospeech.v1.SynthesizeSpeechResponse;
 import com.google.common.io.ByteSource;
-import com.tools.texttospeech.model.Text2SpeechRequest;
+import com.tools.texttospeech.model.TextToSpeechRequest;
 import com.tools.texttospeech.model.VoiceDto;
-import com.tools.texttospeech.service.Text2SpeechService;
+import com.tools.texttospeech.service.TextToSpeechService;
 
 @RestController
 @CrossOrigin
-public class Text2SpeechController {
-	private Logger logger = LoggerFactory.getLogger(Text2SpeechController.class);
+public class TextToSpeechController {
+	private Logger logger = LoggerFactory.getLogger(TextToSpeechController.class);
 	@Autowired
-	private Text2SpeechService text2speechService;
+	private TextToSpeechService text2speechService;
+
+	public TextToSpeechService getText2speechService() {
+		return text2speechService;
+	}
+
+	public void setText2speechService(TextToSpeechService text2speechService) {
+		this.text2speechService = text2speechService;
+	}
 
 	@GetMapping("voices")
 	public List<VoiceDto> getSupportedVoices() {
@@ -49,7 +57,7 @@ public class Text2SpeechController {
 		InputStreamResource resource = null;
 		SynthesizeSpeechResponse response = null;
 		try {
-			response = text2speechService.speak(new Text2SpeechRequest(language, voice, text, pitch, speakingRate));
+			response = text2speechService.speak(new TextToSpeechRequest(language, voice, text, pitch, speakingRate));
 
 			resource = new InputStreamResource(ByteSource.wrap(response.getAudioContent().toByteArray()).openStream());
 		} catch (Exception e) {

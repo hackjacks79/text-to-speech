@@ -1,13 +1,13 @@
 package com.tools.texttospeech.model;
 
-public class Text2SpeechRequest {
+public class TextToSpeechRequest {
 	private String language;
 	private String voice;
 	private String text;
 	private double pitch;
 	private double speakingRate;
 	
-	public Text2SpeechRequest(String language, String voice, String text, double pitch, double speakingRate) {
+	public TextToSpeechRequest(String language, String voice, String text, double pitch, double speakingRate) {
 		super();
 		this.language = language;
 		this.voice = voice;
@@ -15,7 +15,9 @@ public class Text2SpeechRequest {
 		this.pitch = pitch;
 		this.speakingRate = speakingRate;
 	}
-	
+	public TextToSpeechRequest() {
+		super();
+	}
 	public String getLanguage() {
 		return language;
 	}
